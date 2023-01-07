@@ -1,0 +1,10 @@
+dataset: "mstc"
+data_path: "/home/zhy/anomaly/datasets/mstc/mstc/"
+layers_to_extract_from: ["layer2","layer3"]
+resize: [200,360]  # height, weight
+imagesize: [3, 200, 360]  # channel, height, weight
+#_CLASSNAMES: ["01","02","03","04","05","06","07","08","09","10","11","12"]
+_CLASSNAMES: ["02","03","04","05","06","07","08","09","10","11","12"]
+dataset_len: 12
+#sampler_name: approx_greedy_coreset
+#test_method: Similarity_Distance

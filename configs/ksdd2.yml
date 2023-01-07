@@ -1,0 +1,8 @@
+dataset: "ksdd"
+data_path: "/home/zhy/anomaly/datasets/KSDD2/"
+resize: [384,160]
+imagesize: [3,384,160]
+_CLASSNAMES: [ "0" ]
+dataset_len: 1
+low_shot: False
+distance: True

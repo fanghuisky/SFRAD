@@ -1,0 +1,8 @@
+dataset: "mvtec"
+data_path: "/home/zhy/anomaly/datasets/mvtec/"
+resize: [256,256]
+imagesize: [3,224,224]
+_CLASSNAMES: [ "bottle", "cable", "capsule", "carpet", "grid",
+               "hazelnut", "leather",  "metalnut", "pill", "screw",
+               "tile",  "toothbrush",  "transistor",  "wood",  "zipper" ]
+dataset_len: 15
