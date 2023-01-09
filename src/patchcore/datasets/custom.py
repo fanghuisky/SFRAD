@@ -37,17 +37,31 @@ class CustomDataset(torch.utils.data.Dataset):
         self.transform_mean = [0.485, 0.456, 0.406]
         self.transform_std = [0.229, 0.224, 0.225]
         self.imgpaths_per_class, self.data_to_iterate = self.get_image_data()
-        self.transform_img = [
-            transforms.Resize(resize),
-            transforms.ToTensor(),
-            transforms.Normalize(mean=self.transform_mean, std=self.transform_std),
-        ]
+        if(resize==imagesize[1:]:
+            self.transform_img = [
+                transforms.Resize(resize),
+                transforms.ToTensor(),
+                transforms.Normalize(mean=self.transform_mean, std=self.transform_std),
+            ]
+            self.transform_mask = [
+                transforms.Resize(resize),
+                transforms.ToTensor(),
+            ]
+        else:
+            self.transform_img = [
+                transforms.Resize(resize),
+                transform.CenterCrop(imagesize[1:]),
+                transforms.ToTensor(),
+                transforms.Normalize(mean=self.transform_mean, std=self.transform_std),
+            ]
+            self.transform_mask = [
+                transforms.Resize(resize),
+                transforms.CenterCrop(imagesize[1:]),
+                transforms.ToTensor(),
+            ]
         self.transform_img = transforms.Compose(self.transform_img)
 
-        self.transform_mask = [
-            transforms.Resize(resize),
-            transforms.ToTensor(),
-        ]
+
         self.transform_mask = transforms.Compose(self.transform_mask)
 
 
