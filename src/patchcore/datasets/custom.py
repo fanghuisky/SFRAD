@@ -59,9 +59,8 @@ class CustomDataset(torch.utils.data.Dataset):
                 transforms.CenterCrop(imagesize[1:]),
                 transforms.ToTensor(),
             ]
+        
         self.transform_img = transforms.Compose(self.transform_img)
-
-
         self.transform_mask = transforms.Compose(self.transform_mask)
 
 
