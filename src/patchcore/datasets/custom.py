@@ -60,7 +60,10 @@ class CustomDataset(torch.utils.data.Dataset):
             mask = PIL.Image.open(mask_path)
             mask = self.transform_mask(mask)
         else:
-            mask = torch.zeros([3, *image.size()[1:]])
+            if('mvtec' in mask_path):
+                mask = torch.zeros([1, *image.size()[1:]])
+            else:
+                mask = torch.zeros([3, *image.size()[1:]])
 
         return {
             "image": image,
