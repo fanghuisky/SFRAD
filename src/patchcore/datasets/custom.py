@@ -50,7 +50,7 @@ class CustomDataset(torch.utils.data.Dataset):
         else:
             self.transform_img = [
                 transforms.Resize(resize),
-                transform.CenterCrop(imagesize[1:]),
+                transforms.CenterCrop(imagesize[1:]),
                 transforms.ToTensor(),
                 transforms.Normalize(mean=self.transform_mean, std=self.transform_std),
             ]
