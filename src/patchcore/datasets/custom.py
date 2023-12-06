@@ -37,7 +37,7 @@ class CustomDataset(torch.utils.data.Dataset):
         self.transform_mean = [0.485, 0.456, 0.406]
         self.transform_std = [0.229, 0.224, 0.225]
         self.imgpaths_per_class, self.data_to_iterate = self.get_image_data()
-        if(resize==imagesize[1:]:
+        if(resize==imagesize[1:]):
             self.transform_img = [
                 transforms.Resize(resize),
                 transforms.ToTensor(),
